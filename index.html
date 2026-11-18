@@ -6,8 +6,17 @@
   <title>Kwetsbare huid bij medische behandeling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <style>
+    /* Fractul Variable: zet het lettertypebestand in de map fonts/ */
+    @font-face {
+      font-family: "Fractul Variable";
+      src: url("fonts/FractulVariable.woff2") format("woff2-variations"),
+           url("fonts/FractulVariable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
     :root {
       /* Kleurenpalet */
       --grijs-licht: #f4f4f4;
@@ -31,8 +40,10 @@
       --wit: #ffffff;
 
       /* Lettertypes */
-      --kop-font: "Outfit", system-ui, sans-serif;
-      --tekst-font: "Source Sans 3", system-ui, sans-serif;
+      /* Koptekst: Fractul Variable (Outfit als reserve zolang het bestand ontbreekt) */
+      --kop-font: "Fractul Variable", "Fractul", "Outfit", system-ui, sans-serif;
+      /* Broodtekst: Source Sans Variable (op Google Fonts heet die "Source Sans 3") */
+      --tekst-font: "Source Sans Variable", "Source Sans 3", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
