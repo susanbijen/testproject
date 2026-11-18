@@ -1,0 +1,158 @@
+:root {
+  /* Kleurenpalet */
+  --grijs-licht: #f4f4f4;
+  --blauw: #0000ff;
+  --groen-fel: #00ff00;      /* Home-knop */
+  --paars: #733673;          /* koppen, kruimels, infoblok */
+  --paars-blok: #733673;
+  --magenta-donker: #90005e; /* hoofdstuknummer, links, bronnummers */
+  --magenta: #c92083;        /* actieve kruimel */
+  --hemelblauw: #008dff;
+  --cyaan: #00ffff;
+
+  /* Ondersteunende kleuren */
+  --geel: #ffff00;
+  --groen-donker: #004a00;   /* kop Medicatiesoorten */
+  --magenta-licht: #ffa3ff;  /* RGB-magenta, 36% */
+  --blauw-licht: #bfd7f9;    /* #4e91ed, 36% */
+  --groen: #009b00;          /* medicatieknoppen */
+
+  --tekst: #1d1d1d;
+  --wit: #ffffff;
+
+  /* Lettertypes */
+  /* Koptekst: Outfit (gratis, via Google Fonts) */
+  --kop-font: "Outfit", system-ui, sans-serif;
+  /* Broodtekst: Source Sans Variable (op Google Fonts heet die "Source Sans 3") */
+  --tekst-font: "Source Sans Variable", "Source Sans 3", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--wit);
+  color: var(--tekst);
+  font-family: var(--tekst-font);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* Bovenbalk */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem clamp(16px, 5vw, 6.5rem);
+  border-bottom: 1px solid var(--grijs-licht);
+}
+nav.kruimels {
+  font-family: var(--kop-font);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--paars);
+}
+nav.kruimels a { color: inherit; text-decoration: none; }
+nav.kruimels a:hover { text-decoration: underline; }
+nav.kruimels .scheiding { margin: 0 .5rem; }
+nav.kruimels .actief { color: var(--magenta); }
+
+.home {
+  flex-shrink: 0;
+  background: var(--groen-fel);
+  color: var(--wit);
+  font-family: var(--kop-font);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: .5rem 2.25rem;
+  border-radius: 6px;
+}
+
+main {
+  padding: 3.5rem clamp(16px, 5vw, 6.5rem) 5rem;
+  max-width: 1500px;
+}
+
+h1 {
+  font-family: var(--kop-font);
+  font-weight: 600;
+  color: var(--paars);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 2.5rem;
+}
+h1 .nummer { color: var(--magenta-donker); font-size: .6em; margin-right: .3rem; }
+
+h2 {
+  font-family: var(--kop-font);
+  font-weight: 500;
+  color: var(--paars);
+  font-size: 1.5rem;
+  margin: 3rem 0 .75rem;
+}
+
+.kolommen {
+  display: grid;
+  grid-template-columns: minmax(0, 38rem) minmax(0, 34rem);
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+p { margin: 0 0 1.75rem; }
+sup { color: var(--magenta-donker); font-size: .7em; }
+a.link { color: var(--magenta-donker); font-weight: 600; text-decoration: none; }
+a.link:hover { text-decoration: underline; }
+
+.infoblok {
+  background: var(--paars-blok);
+  color: var(--wit);
+  padding: 2.5rem 2.6rem;
+  border-radius: 10px;
+  align-self: start;
+  margin-top: 2rem;
+}
+.infoblok p { margin: 0; }
+.infoblok a { color: var(--wit); }
+
+.medicatie h3 {
+  font-family: var(--kop-font);
+  font-weight: 600;
+  color: var(--groen-donker);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin: 3rem 0 1.25rem;
+}
+.knoppen {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: .9rem 2.5rem;
+}
+.knoppen a {
+  background: var(--groen);
+  color: var(--wit);
+  font-weight: 600;
+  text-decoration: none;
+  padding: .55rem 1.1rem;
+  border-radius: 5px;
+}
+.knoppen a:hover { filter: brightness(1.1); }
+
+@media (max-width: 800px) {
+  header { flex-direction: column; align-items: flex-start; }
+  .kolommen { grid-template-columns: 1fr; gap: 0; }
+  .knoppen { grid-template-columns: 1fr; justify-items: start; }
+}
+
+/* Terug-link en lijsten op detailpagina's */
+.terug {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--magenta-donker);
+  font-family: var(--kop-font);
+  font-weight: 600;
+  text-decoration: none;
+}
+.terug:hover { text-decoration: underline; }
+main ul { margin: 0 0 1.75rem; padding-left: 1.3rem; }
+main li { margin-bottom: .35rem; }
