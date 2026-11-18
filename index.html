@@ -3,11 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mijn testproject</title>
+  <title>Kwetsbare huid bij medische behandeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Kleuren uit het ontwerp */
+      --paars: #7a3577;          /* koppen */
+      --paars-blok: #74346f;     /* infoblok */
+      --magenta: #b0197e;        /* actieve kruimel, links, bronnummers */
+      --groen: #0b9a1c;          /* medicatieknoppen */
+      --groen-fel: #00e01a;      /* Home-knop */
+      --groen-donker: #2f6b3a;   /* kop Medicatiesoorten */
+      --tekst: #1d1d1d;
+      --wit: #ffffff;
+
+      /* Lettertypes */
+      --kop-font: "Outfit", system-ui, sans-serif;
+      --tekst-font: "Source Sans 3", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--wit);
+      color: var(--tekst);
+      font-family: var(--tekst-font);
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    /* Bovenbalk */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem clamp(16px, 5vw, 6.5rem);
+      border-bottom: 1px solid #eee;
+    }
+    nav.kruimels {
+      font-family: var(--kop-font);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--paars);
+    }
+    nav.kruimels a { color: inherit; text-decoration: none; }
+    nav.kruimels a:hover { text-decoration: underline; }
+    nav.kruimels .scheiding { margin: 0 .5rem; }
+    nav.kruimels .actief { color: var(--magenta); }
+
+    .home {
+      flex-shrink: 0;
+      background: var(--groen-fel);
+      color: var(--wit);
+      font-family: var(--kop-font);
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-decoration: none;
+      padding: .5rem 2.25rem;
+      border-radius: 6px;
+    }
+
+    main {
+      padding: 3.5rem clamp(16px, 5vw, 6.5rem) 5rem;
+      max-width: 1500px;
+    }
+
+    h1 {
+      font-family: var(--kop-font);
+      font-weight: 600;
+      color: var(--paars);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0 0 2.5rem;
+    }
+    h1 .nummer { color: var(--magenta); font-size: .6em; margin-right: .3rem; }
+
+    h2 {
+      font-family: var(--kop-font);
+      font-weight: 500;
+      color: var(--paars);
+      font-size: 1.5rem;
+      margin: 3rem 0 .75rem;
+    }
+
+    .kolommen {
+      display: grid;
+      grid-template-columns: minmax(0, 38rem) minmax(0, 34rem);
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    p { margin: 0 0 1.75rem; }
+    sup { color: var(--magenta); font-size: .7em; }
+    a.link { color: var(--magenta); font-weight: 600; text-decoration: none; }
+    a.link:hover { text-decoration: underline; }
+
+    .infoblok {
+      background: var(--paars-blok);
+      color: var(--wit);
+      padding: 2.5rem 2.6rem;
+      border-radius: 10px;
+      align-self: start;
+      margin-top: 2rem;
+    }
+    .infoblok p { margin: 0; }
+    .infoblok a { color: var(--wit); }
+
+    .medicatie h3 {
+      font-family: var(--kop-font);
+      font-weight: 600;
+      color: var(--groen-donker);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin: 3rem 0 1.25rem;
+    }
+    .knoppen {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: .9rem 2.5rem;
+    }
+    .knoppen a {
+      background: var(--groen);
+      color: var(--wit);
+      font-weight: 600;
+      text-decoration: none;
+      padding: .55rem 1.1rem;
+      border-radius: 5px;
+    }
+    .knoppen a:hover { filter: brightness(1.1); }
+
+    @media (max-width: 800px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .kolommen { grid-template-columns: 1fr; gap: 0; }
+      .knoppen { grid-template-columns: 1fr; justify-items: start; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hallo wereld!</h1>
-  <p>Dit is mijn eerste testproject.</p>
-  <p>Deze regel is later toegevoegd.</p>
+  <header>
+    <nav class="kruimels" aria-label="Kruimelpad">
+      <a href="#">Schade aan de huid</a><span class="scheiding">&gt;</span>
+      <a href="#">Kwetsbare huid</a><span class="scheiding">&gt;</span>
+      <span class="actief">Kwetsbare huid bij medische behandeling</span>
+    </nav>
+    <a class="home" href="#">Home</a>
+  </header>
+
+  <main>
+    <h1><span class="nummer">4.2.5.</span>Kwetsbare huid bij medische behandeling</h1>
+
+    <div class="kolommen">
+      <div>
+        <p>Een kwetsbare huid kan optreden tijdens een oncologisch behandeltraject, als bijwerking van het chronische gebruik van bepaalde groepen medicatie en als complicatie na een stamceltransplantatie.</p>
+
+        <h2>Behandeling tegen kanker</h2>
+        <p>Een kwetsbare huid tijdens een oncologisch behandeltraject kan ontstaan door het gebruik van doelgerichte therapie, cytostatica (chemotherapie) en door bestraling. Bij doelgerichte therapie kan een hand-voet-huid-reactie ontstaan, en bij behandeling met chemotherapie een hand-voet syndroom.<sup>(133)</sup></p>
+
+        <h2>Chronisch medicatiegebruik</h2>
+        <p>Voor het signaleren van een mogelijk verhoogd risico op voetulcera op basis van chronisch medicatiegebruik dient gekeken te worden naar het klinische beeld van aanwezige schade aan huid en nagels. Hierbij dient de op dat moment geldende versie van het <a class="link" href="#">Farmacotherapeutisch Kompas</a> geraadpleegd te worden.</p>
+      </div>
+
+      <div>
+        <aside class="infoblok">
+          <p>Voor een uitgebreid overzicht van bijwerkingen aan de huid en nagels bij een oncologisch behandeltraject verwijzen we je graag naar het intranet van de <a href="#">Nederlandse Vereniging van Podotherapeuten.</a></p>
+        </aside>
+
+        <section class="medicatie">
+          <h3>Medicatiesoorten:</h3>
+          <div class="knoppen">
+            <a href="#">Proteïnekinaseremmers</a>
+            <a href="#">TNF-remmers</a>
+            <a href="#">mTor-remmers</a>
+            <a href="#">Interferonen</a>
+            <a href="#">Antimetabolieten</a>
+            <a href="#">Hartglycosiden</a>
+            <a href="#">Calcineurine-remmers</a>
+            <a href="#">COX-2-remmers</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
