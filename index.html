@@ -9,13 +9,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Kleuren uit het ontwerp */
-      --paars: #7a3577;          /* koppen */
-      --paars-blok: #74346f;     /* infoblok */
-      --magenta: #b0197e;        /* actieve kruimel, links, bronnummers */
+      /* Kleurenpalet */
+      --grijs-licht: #f4f4f4;
+      --blauw: #0000ff;
+      --groen-fel: #00ff00;      /* Home-knop */
+      --paars: #733673;          /* koppen, kruimels, infoblok */
+      --paars-blok: #733673;
+      --magenta-donker: #90005e; /* hoofdstuknummer, links, bronnummers */
+      --magenta: #c92083;        /* actieve kruimel */
+      --hemelblauw: #008dff;
+      --cyaan: #00ffff;
+
+      /* Nog niet in het palet */
       --groen: #0b9a1c;          /* medicatieknoppen */
-      --groen-fel: #00e01a;      /* Home-knop */
       --groen-donker: #2f6b3a;   /* kop Medicatiesoorten */
+
       --tekst: #1d1d1d;
       --wit: #ffffff;
 
@@ -42,7 +50,7 @@
       justify-content: space-between;
       gap: 1rem;
       padding: 1.5rem clamp(16px, 5vw, 6.5rem);
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--grijs-licht);
     }
     nav.kruimels {
       font-family: var(--kop-font);
@@ -80,7 +88,7 @@
       line-height: 1.15;
       margin: 0 0 2.5rem;
     }
-    h1 .nummer { color: var(--magenta); font-size: .6em; margin-right: .3rem; }
+    h1 .nummer { color: var(--magenta-donker); font-size: .6em; margin-right: .3rem; }
 
     h2 {
       font-family: var(--kop-font);
@@ -98,8 +106,8 @@
     }
 
     p { margin: 0 0 1.75rem; }
-    sup { color: var(--magenta); font-size: .7em; }
-    a.link { color: var(--magenta); font-weight: 600; text-decoration: none; }
+    sup { color: var(--magenta-donker); font-size: .7em; }
+    a.link { color: var(--magenta-donker); font-weight: 600; text-decoration: none; }
     a.link:hover { text-decoration: underline; }
 
     .infoblok {
